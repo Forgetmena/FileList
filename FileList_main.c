@@ -1,13 +1,11 @@
-#include "FileList.h"
+#include "FileList_main.h"
+#include "FileList_Method.h"
 
-struct FileList
-{
-    char* fileNames;
-    struct FileList* prevPtr;
-    struct FileList* nextPtr;
-};
+int main() {
 
-typedef struct FileList FILELIST;
-typedef struct FileList* FILELISTPTR;
+    return 0;
+}
+
+
 
 
