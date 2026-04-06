@@ -21,7 +21,6 @@ void showMenu() {
                 char fileName[100];
                 scanf("%s", fileName);
                 printf("打开文件：%s\n", fileName);
-                printf("请输入要打开的文件名：\n");
                 FILELISTPTR newPtr = malloc(sizeof(FILELIST));
                 if (newPtr == NULL) {
                     printf("内存分配失败\n");
