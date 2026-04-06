@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "FileList_Method.h"
+#include "FileList_Menu.h"
 
 struct FileList
 {

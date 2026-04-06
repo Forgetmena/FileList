@@ -12,3 +12,9 @@ void moveHistoryFileToFirst(FILELISTPTR* headPtrPtr, FILELISTPTR* lastPtrPtr, ch
 void addHistoryFile(FILELISTPTR* headPtrPtr, FILELISTPTR* lastPtrPtr, FILELISTPTR newPtr);
 
 void RemoveBoundaryInvalid(FILELISTPTR* headPtrPtr, FILELISTPTR* lastPtrPtr);
+
+FILELISTPTR goBackToPreviousFile(FILELISTPTR* headPtrPtr, FILELISTPTR* lastPtrPtr, char* fileName);
+
+FILELISTPTR goForwardToNextFile(FILELISTPTR* headPtrPtr, FILELISTPTR* lastPtrPtr, char* fileName);
+
+void printHistoryFileList(FILELISTPTR headPtr);

@@ -1,4 +1,3 @@
-#include "FileList_main.h"
 #include "FileList_Method.h"
 
 //创建一个空链表
@@ -78,4 +77,40 @@ void RemoveBoundaryInvalid(FILELISTPTR* headPtrPtr, FILELISTPTR* lastPtrPtr) {
         free(tempPtr);
     }
     return; 
+}
+
+//回到历史某个文件的上一个文件
+FILELISTPTR goBackToPreviousFile(FILELISTPTR* headPtrPtr, FILELISTPTR* lastPtrPtr, char* fileName) {
+    FILELISTPTR currentPtr = findFileNodePtr((*headPtrPtr), fileName);
+    if (currentPtr == (*headPtrPtr)) {
+        printf("文件不存在\n");
+        return (*headPtrPtr);
+    } else if (currentPtr == (*headPtrPtr)->nextPtr) {
+        printf("已经是第一个文件了，无法回退\n");
+        return (*headPtrPtr);
+    }
+    return currentPtr->prevPtr;
+}
+
+//回到历史某个文件的下一个文件
+FILELISTPTR goForwardToNextFile(FILELISTPTR* headPtrPtr, FILELISTPTR* lastPtrPtr, char* fileName) {
+    FILELISTPTR currentPtr = findFileNodePtr((*headPtrPtr), fileName);
+    if (currentPtr == (*headPtrPtr)) {
+        printf("文件不存在\n");
+        return (*headPtrPtr);
+    } else if (currentPtr == (*lastPtrPtr)) {
+        printf("已经是最后一个文件了，无法前进\n");
+        return (*headPtrPtr);
+    }
+    return currentPtr->nextPtr;
+}
+
+//输出历史文件列表
+void printHistoryFileList(FILELISTPTR headPtr) {
+    FILELISTPTR currentPtr = headPtr->nextPtr;
+    printf("历史文件列表：\n");
+    while (currentPtr != headPtr) {
+        printf("%s\n", currentPtr->fileName);
+        currentPtr = currentPtr->nextPtr;
+    }
 }

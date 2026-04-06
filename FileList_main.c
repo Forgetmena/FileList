@@ -1,8 +1,7 @@
 #include "FileList_main.h"
-#include "FileList_Method.h"
 
 int main() {
-
+    showMenu();
     return 0;
 }
 
