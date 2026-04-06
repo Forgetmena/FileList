@@ -114,3 +114,15 @@ void printHistoryFileList(FILELISTPTR headPtr) {
         currentPtr = currentPtr->nextPtr;
     }
 }
+
+//释放链表内存
+void freeFileList(FILELISTPTR* headPtrPtr) {
+    FILELISTPTR currentPtr = (*headPtrPtr)->nextPtr;
+    while (currentPtr != (*headPtrPtr)) {
+        FILELISTPTR tempPtr = currentPtr;
+        currentPtr = currentPtr->nextPtr;
+        free(tempPtr->fileName);
+        free(tempPtr);
+    }
+    free((*headPtrPtr));
+}

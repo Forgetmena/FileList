@@ -1,8 +1,8 @@
+#ifndef FILELIST_MAIN_H
+#define FILELIST_MAIN_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "FileList_Method.h"
-#include "FileList_Menu.h"
 
 struct FileList
 {
@@ -13,3 +13,5 @@ struct FileList
 
 typedef struct FileList FILELIST;
 typedef struct FileList* FILELISTPTR;
+
+#endif // FILELIST_MAIN_H

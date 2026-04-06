@@ -35,7 +35,7 @@ void showMenu() {
                 }
                 strcpy(newPtr->fileName, fileName);
                 // 将新节点添加到历史记录中
-                addFileToList(&headPtr, &lastPtr, newPtr);
+                addHistoryFile(&headPtr, &lastPtr, newPtr);
                 break;
             case 2:
                 // 查看历史文件的操作
@@ -67,6 +67,7 @@ void showMenu() {
                 printf("无效的选择，请重新输入\n");
         }
         if (!flag) {
+            freeFileList(&headPtr);
             break;
         }
     }

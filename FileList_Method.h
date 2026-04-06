@@ -1,3 +1,5 @@
+#ifndef FILELIST_METHOD_H
+#define FILELIST_METHOD_H
 #include "FileList_main.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,3 +20,7 @@ FILELISTPTR goBackToPreviousFile(FILELISTPTR* headPtrPtr, FILELISTPTR* lastPtrPt
 FILELISTPTR goForwardToNextFile(FILELISTPTR* headPtrPtr, FILELISTPTR* lastPtrPtr, char* fileName);
 
 void printHistoryFileList(FILELISTPTR headPtr);
+
+void freeFileList(FILELISTPTR* headPtrPtr);
+
+#endif // FILELIST_METHOD_H
